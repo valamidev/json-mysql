@@ -1,0 +1,17 @@
+{
+  "name": "json-mysql",
+  "version": "1.1.9",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "mysql",
+    "json",
+    "utility"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Valami.dev",
+  "license": "ISC"
+}
