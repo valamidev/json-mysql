@@ -12,7 +12,7 @@
 ```
 // From JSON:
 
-const json_mysql = require("json_mysql");
+const json_mysql = require("json-mysql");
 
 let test_json = {
   symbol: "BNBUSDT",
