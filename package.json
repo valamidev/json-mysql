@@ -10,8 +10,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/valamidev/json-mysql.git"
   },
-  "author": "Valami.dev",
+  "author": "Valamidev",
   "license": "ISC"
 }
