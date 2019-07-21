@@ -27,8 +27,6 @@ class JSONtoMysql {
       this.structure[i].name = key;
       var type = typeof value;
 
-      // console.log('Test Json:', type);
-
       switch (type) {
         case "string":
           this.structure[i] = this.extend(
@@ -45,7 +43,7 @@ class JSONtoMysql {
         default:
           this.structure[i].type = "INT";
           this.structure[i].length = 10;
-          this.structure[i].default = "DEFAULT '0'";
+          this.structure[i].default = "DEFAULT NULL";
           break;
       }
 
@@ -91,7 +89,7 @@ class JSONtoMysql {
   string_type(string) {
     let field = {};
 
-    // Not real string
+    // String check to possible float
     if (this.string_isnumber(string)) {
       return this.number_type(string);
     }
@@ -99,11 +97,11 @@ class JSONtoMysql {
     if (string.length > 255) {
       field.type = "TEXT";
       field.length = 0;
-      field.default = "NOT NULL";
+      field.default = "DEFAULT NULL";
     } else {
       field.type = "VARCHAR";
       field.length = 255;
-      field.default = "NOT NULL";
+      field.default = "DEFAULT NULL";
     }
 
     return field;
@@ -116,15 +114,15 @@ class JSONtoMysql {
       if (number > 4294967295) {
         field.type = "BIGINT";
         field.length = 20;
-        field.default = "DEFAULT '0'";
+        field.default = "DEFAULT NULL";
       } else {
         field.type = "INT";
         field.length = 10;
-        field.default = "DEFAULT '0'";
+        field.default = "DEFAULT NULL";
       }
     } else {
-      field.type = "FLOAT";
-      field.default = "DEFAULT '0'";
+      field.type = "DOUBLE";
+      field.default = "DEFAULT NULL";
       field.length = 0;
     }
 
