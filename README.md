@@ -3,9 +3,11 @@
 - Small package to generate MySQL Table structure from a given JSON or Array. 
 
 **Changelog**
+
 *Version 1.2:*
 - Drop Float() support and replace with Double(), with possible precision problems.
 - Change Default values to NULL for every field as more generic
+
 *Version 1.1:* 
 - Add BIGINT(20) support for Timestamps
 - Fix a bug where DEFAULT were EFAULT
